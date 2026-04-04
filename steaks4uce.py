@@ -155,3 +155,4 @@ def exploit():
     sys.exit(1)
 
   print 'Device is now in pwned DFU Mode.'
+

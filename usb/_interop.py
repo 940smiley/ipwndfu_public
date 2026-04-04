@@ -96,3 +96,4 @@ def as_array(data=None):
         a = array.array('B')
         a.fromstring(data) # deprecated since 3.2
         return a
+

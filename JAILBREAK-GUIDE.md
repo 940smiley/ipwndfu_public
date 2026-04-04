@@ -19,7 +19,7 @@ Found: CPID:8920 CPRV:15 CPFM:03 SCEP:03 BDID:00 ECID:XXXXXXXXXXXXXXXX SRTG:[iBo
 Device is now in pwned DFU Mode.
 ```
 
-6. Once in pwned DFU Mode, use the -x flag to install the alloc8 exploit. This step will replace 24Kpwn exploit with alloc8.
+1. Once in pwned DFU Mode, use the -x flag to install the alloc8 exploit. This step will replace 24Kpwn exploit with alloc8.
 
 ```
 $ ./ipwndfu -x
@@ -40,7 +40,8 @@ Sending run command.
 If screen is not red, NOR was flashed successfully and device will reboot.
 ```
 
-#### Notes:
+#### Notes
+
 * Installation takes about 30 seconds. Once NOR is being flashed, the screen will be green for about 10 seconds, and then your phone will reboot.
 
 * If there are any errors before the screen turned green, it is safe to try again.
@@ -48,10 +49,6 @@ If screen is not red, NOR was flashed successfully and device will reboot.
 * If the screen turns red, something went wrong while your phone was being flashed. Trying again probably won't help.
 
 * If there are no issues, the phone will reboot and automatically boot into iOS.
-
-
-
-
 
 ### 3 second delay during boot when using a phone jailbroken with alloc8
 
@@ -61,15 +58,13 @@ When your phone is off, to turn it on you will need to keep holding the Power bu
 
 If your phone enters deep sleep, there will be a 3 second delay before it wakes up. This can be fixed if you disable deep sleep with a tweak from Cydia, but your phone's battery life will decrease.
 
-
 ### Where to download older IPSWs
 
 Always download IPSWs directly from Apple, because IPSWs from other sites could be infected with malware.
 
 There is a trusted site where you can find legitimate Apple download links for older IPSW files:
 
-https://ipsw.me/
-
+<https://ipsw.me/>
 
 ### How to create a 24Kpwn IPSW
 
@@ -94,7 +89,6 @@ A: No
 
 You must answer No to create a 24Kpwn IPSW using redsn0w. If you did this correctly, the name of the custom IPSW from redsn0w will start with ```NO_BB_OLDROM_iPhone2,1```.
 
-
 ### Compatibility with older iOS versions
 
 Newer phones might not support some older versions of iOS. You cannot brick your phone by attempting to restore an older version of iOS, so it might be worth it to try anyway. If iTunes restore fails with Error 28, the hardware of your phone is not compatible with that version of iOS.
@@ -112,7 +106,6 @@ Newer phones might not support some older versions of iOS. You cannot brick your
 
 You can find the week and year of manufacture by looking at the serial number of your phone. If your phone is from 2011 or 2012, help me expand this list and let me what versions worked or didn't work.
 
-
 ### Decoding iPhone 3GS serial number
 
 ```
@@ -124,10 +117,9 @@ DDD = Unique ID
 EE = Color
 ```
 
-
 ### How to restore to a custom IPSW
 
-1. Enter DFU Mode: https://www.theiphonewiki.com/wiki/DFU_Mode
+1. Enter DFU Mode: <https://www.theiphonewiki.com/wiki/DFU_Mode>
 
 2. Run exploit to put your phone into pwned DFU Mode. You can use `./ipwndfu -p`.
 

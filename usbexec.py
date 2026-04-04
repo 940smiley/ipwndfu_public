@@ -80,7 +80,7 @@ class PwnedUSBDevice():
     assert len(data) % AES_BLOCK_SIZE == 0
     (retval, received) = self.execute(len(data), self.config.aes_crypto_cmd, action, self.cmd_data_address(7), self.cmd_data_address(0), len(data), key, 0, 0, data)
     assert retval & 0xFFFFFFFF == 0
-    return received[:len(data)]      
+    return received[:len(data)]
 
   def read_memory(self, address, length):
     data = str()
@@ -134,7 +134,7 @@ class PwnedUSBDevice():
     device = dfu.acquire_device()
     self.serial_number = device.serial_number
     dfu.release_device(device)
- 
+
     for dp in device_platform.all_platforms:
       if self.serial_number.startswith('CPID:%04x CPRV:%02x ' % (dp.cpid, dp.cprv)):
         self.platform = dp
@@ -153,3 +153,4 @@ class PwnedUSBDevice():
       print info
       print 'ERROR: No matching usbexec.config found for this image.'
       sys.exit(1)
+

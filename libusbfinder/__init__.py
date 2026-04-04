@@ -111,3 +111,4 @@ cached_path = libusb1_path_internal()
 
 def libusb1_path():
     return cached_path
+

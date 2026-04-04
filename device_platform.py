@@ -118,3 +118,4 @@ all_platforms = [
     demotion_reg=0x2352BC000,
   ),
 ]
+

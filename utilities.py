@@ -35,3 +35,4 @@ def hex_dump(data, address):
     sys.exit(1)
 
   return stdout
+

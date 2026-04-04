@@ -123,3 +123,4 @@ def remove_exploit(nor):
     new_nor.parts[1] = '\x00' * 460
 
     return new_nor
+

@@ -52,3 +52,4 @@ def remove_exploit(img3):
     img3 = obj.newImage3(decrypted=False)
     assert len(img3) <= 0x24000
     return img3
+

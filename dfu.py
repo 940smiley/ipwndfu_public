@@ -66,3 +66,4 @@ def request_image_validation(device):
     device.ctrl_transfer(0xA1, 3, 0, 0, 6, 1000)
     device.ctrl_transfer(0xA1, 3, 0, 0, 6, 1000)
     usb_reset(device)
+

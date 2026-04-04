@@ -328,3 +328,4 @@ def get_string(dev, index, langid = None):
         return buf[2:buf[0]].tobytes().decode('utf-16-le')
     else:
         return buf[2:buf[0]].tostring().decode('utf-16-le')
+

@@ -96,3 +96,4 @@ class Image3:
         assert len(tagData) == len(newTagData)
 
         return Image3.createImage3FromTags(self.type, typeTag + [(tagMagic, tagTotalSize, tagDataSize, newTagData)] + versTag + sepoTag + bordTag + kbagTag + shshTag + certTag)
+

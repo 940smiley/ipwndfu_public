@@ -36,3 +36,4 @@ class NorData():
         dump = self.parts[0] + self.parts[1] + self.parts[2] + all_images + self.parts[4]
         assert len(dump) == NOR_SIZE
         return dump
+

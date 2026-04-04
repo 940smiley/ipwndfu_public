@@ -30,7 +30,7 @@ def all_exploit_configs():
             b"\x1f\x20\x03\xd5", # nop
         ])
     }
-    
+
     t8011_patches = {
         0x100006df8: "\x21\x00\x80\x52\xe1\xb7\x03\x39\xe1\xb3\x03\x39\xe1\xbb\x03\x39",
         0x100006e0c: "\x1f\x20\x03\xd5", # nop
@@ -89,3 +89,4 @@ def main():
 
 if __name__ == "__main__":
 	main()
+

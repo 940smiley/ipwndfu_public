@@ -35,3 +35,4 @@ def send_data(device, data):
         amount = min(len(data) - index, MAX_PACKET_SIZE)
         assert device.write(0x04, data[index:index + amount], 1000) == amount
         index += amount
+
